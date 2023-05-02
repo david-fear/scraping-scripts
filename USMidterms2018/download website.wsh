@@ -1,0 +1,14 @@
+URL="https://www.theguardian.com/us-news/ng-interactive/2018/nov/06/midterm-elections-2018-live-results-latest-winners-and-seats"
+Set WshShell = WScript.CreateObject(“WScript.Shell”)
+Set http = CreateObject(“Microsoft.XmlHttp”)
+
+On Error Resume Next
+http.open "GET", URL, False
+http.send ""
+if err.Number = 0 Then
+     WScript.Echo http.responseText
+Else
+     Wscript.Echo “error ” & Err.Number & ": " & Err.Description
+End If
+set WshShell = Nothing
+Set http = Nothing
